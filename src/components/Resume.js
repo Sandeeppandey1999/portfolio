@@ -17,9 +17,7 @@ export default function Resume() {
        
         
          
-        <Button sx={{ mt: 2 }} href={resumePdf} download variant="outlined">
-          Download Resume
-        </Button>
+ 
         <Box
             component="iframe"
             src={resumePdf}

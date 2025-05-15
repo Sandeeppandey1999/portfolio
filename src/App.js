@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { AppBar, Toolbar, Typography, Avatar, Button, Box } from '@mui/material';
-import profileImg from './assets/profile.jpeg';
+import profileImg from './assets/pro.png';
 import Home from './components/Home';
 import Projects from './components/Projects';
 import About from './components/About';
 import Resume from './components/Resume';
-
+import Contact from './components/Contact';
 export default function App() {
   const [section, setSection] = useState('home');
 
@@ -14,6 +14,7 @@ export default function App() {
       case 'home': return <Home />;
       case 'projects': return <Projects />;
       case 'about': return <About />;
+      case 'contact': return <Contact />;
       case 'resume': return <Resume />;
       default: return <Home />;
     }
@@ -30,7 +31,7 @@ export default function App() {
 
   return (
     <Box sx={{ backgroundColor: '#f4f4f4', minHeight: '100vh' }}>
-      <AppBar  position="static" color="info" elevation={1}>
+      <AppBar  position="static" color="default" elevation={1}>
         <Toolbar>
           <Avatar src={profileImg} sx={{ mr: 2 }} />
           <Typography variant="h6" sx={{ flexGrow: 1 }}>Sandeep Pandey</Typography>
@@ -42,6 +43,9 @@ export default function App() {
             Projects
           </Button>
           <Button onClick={() => setSection('about')} sx={navButtonStyle('about')}>
+            About Me
+          </Button>
+          <Button onClick={() => setSection('contact')} sx={navButtonStyle('contact')}>
             Contact
           </Button>
           <Button onClick={() => setSection('resume')} sx={navButtonStyle('resume')}>

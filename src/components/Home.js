@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Typography, Container, Box } from '@mui/material';
 import { motion } from 'framer-motion';
-import bg from '../assets/bg.jpg'; // Adjust the path if needed
+import home from '../assets/home.jpg'; // Adjust the path if needed
 
 export default function Home() {
   const [showHotel, setShowHotel] = useState(false);
@@ -32,7 +32,7 @@ export default function Home() {
   return (
     <Box
       sx={{
-        backgroundImage: `url(${bg})`,
+        backgroundImage: `url(${home})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
@@ -43,19 +43,7 @@ export default function Home() {
         justifyContent: 'center',
       }}
     >
-      {/* Overlay with opacity */}
-      <Box
-        sx={{
-          position: 'absolute',
-          top: 0, left: 0,
-          width: '100%',
-          height: '100%',
-          backgroundColor: 'rgba(0, 0, 0, 0.5)', // adjust opacity
-          zIndex: 1,
-        }}
-      />
-
-      {/* Content */}
+   
       <Container sx={{ py: 6, textAlign: 'center', position: 'relative', zIndex: 2, color: '#fff' }}>
         <motion.div
           initial={{ opacity: 0, y: -50 }}
