@@ -6,6 +6,7 @@ import Projects from './components/Projects';
 import About from './components/About';
 import Resume from './components/Resume';
 import Contact from './components/Contact';
+
 export default function App() {
   const [section, setSection] = useState('home');
 
@@ -31,29 +32,24 @@ export default function App() {
 
   return (
     <Box sx={{ backgroundColor: '#f4f4f4', minHeight: '100vh' }}>
-      <AppBar  position="static" color="default" elevation={1}>
+      {/* Fixed AppBar at the top */}
+      <AppBar position="fixed" color="default" elevation={1}>
         <Toolbar>
           <Avatar src={profileImg} sx={{ mr: 2 }} />
           <Typography variant="h6" sx={{ flexGrow: 1 }}>Sandeep Pandey</Typography>
 
-          <Button onClick={() => setSection('home')} sx={navButtonStyle('home')}>
-            Home
-          </Button>
-          <Button onClick={() => setSection('projects')} sx={navButtonStyle('projects')}>
-            Projects
-          </Button>
-          <Button onClick={() => setSection('about')} sx={navButtonStyle('about')}>
-            About Me
-          </Button>
-          <Button onClick={() => setSection('contact')} sx={navButtonStyle('contact')}>
-            Contact
-          </Button>
-          <Button onClick={() => setSection('resume')} sx={navButtonStyle('resume')}>
-            My Resume
-          </Button>
+          <Button onClick={() => setSection('home')} sx={navButtonStyle('home')}>Home</Button>
+          <Button onClick={() => setSection('projects')} sx={navButtonStyle('projects')}>Projects</Button>
+          <Button onClick={() => setSection('about')} sx={navButtonStyle('about')}>About Me</Button>
+          <Button onClick={() => setSection('contact')} sx={navButtonStyle('contact')}>Contact</Button>
+          <Button onClick={() => setSection('resume')} sx={navButtonStyle('resume')}>My Resume</Button>
         </Toolbar>
       </AppBar>
-      {renderSection()}
+
+      {/* Add padding top to prevent content from hiding behind the fixed AppBar */}
+      <Box sx={{ mt: 10 }}>
+        {renderSection()}
+      </Box>
     </Box>
   );
 }
