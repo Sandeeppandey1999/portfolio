@@ -22,7 +22,7 @@ export default function Resume() {
             component="iframe"
             src={resumePdf}
             title="Resume"
-            sx={{ width: '100%', height: 1100, mt: 3, borderRadius: 2, boxShadow: 2 }}
+            sx={{ width: '100%', height: 1100, mt: 2, borderRadius: 2, boxShadow: 2 }}
           ></Box>
       
       </motion.div>

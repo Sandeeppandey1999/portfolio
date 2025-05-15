@@ -23,8 +23,8 @@ export default function App() {
 
   const navButtonStyle = (tab) => ({
     mx: 1,
-    color: section === tab ? '#9ed219' : 'inherit',
-    borderBottom: section === tab ? '2px solid #9ed219' : '2px solid transparent',
+    color: section === tab ? '#0e59da' : 'inherit',
+    borderBottom: section === tab ? '2px solid #0e59da' : '2px solid transparent',
     borderRadius: 0,
     fontWeight: section === tab ? 'bold' : 'normal',
     transition: 'all 0.3s ease',
@@ -32,11 +32,10 @@ export default function App() {
 
   return (
     <Box sx={{ backgroundColor: '#f4f4f4', minHeight: '100vh' }}>
-      {/* Fixed AppBar at the top */}
       <AppBar position="fixed" color="default" elevation={1}>
         <Toolbar>
           <Avatar src={profileImg} sx={{ mr: 2 }} />
-          <Typography variant="h6" sx={{ flexGrow: 1 }}>Sandeep Pandey</Typography>
+          <Typography variant="h6" fontWeight="bold" sx={{ flexGrow: 1 }}>Sandeep Pandey</Typography>
 
           <Button onClick={() => setSection('home')} sx={navButtonStyle('home')}>Home</Button>
           <Button onClick={() => setSection('projects')} sx={navButtonStyle('projects')}>Projects</Button>
@@ -47,7 +46,7 @@ export default function App() {
       </AppBar>
 
       {/* Add padding top to prevent content from hiding behind the fixed AppBar */}
-      <Box sx={{ mt: 10 }}>
+      <Box sx={{ mt: 5 }}>
         {renderSection()}
       </Box>
     </Box>
